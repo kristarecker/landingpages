@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Decision Sheet | Krista Recker Properties</title>
+  <meta name="description" content="A free side by side math sheet for inherited and as-is sellers on the South Shore. Compare a cash offer against the as-is on market sale, with real Massachusetts closing numbers.">
+
+  <!-- Open Graph (controls how the page previews when shared on social or in DMs) -->
+  <meta property="og:title" content="The Decision Sheet | Krista Recker Properties">
+  <meta property="og:description" content="Side by side math on the cash offer vs the as-is on market sale. The Quincy example walked away with $37,000 more.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="[OG_IMAGE_URL]">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       KRISTA RECKER PROPERTIES — LANDING PAGE DESIGN SYSTEM v2
+       Same brand system as seller-strategy-session.html.
+       Only the body copy changes per page.
+       ============================================================ */
+
+    :root {
+      --kr-base: #F7EFE2;
+      --kr-surface: #FBF5EA;
+      --kr-peach: #F2DDC2;
+      --kr-sage: #E3E9D0;
+      --kr-accent: #B0815D;
+      --kr-accent-deep: #8A5E3D;
+      --kr-text: #1F1B15;
+      --kr-text-soft: #6B5A4A;
+      --kr-divider: #D9C9AC;
+      --kr-border: #E6D9C2;
+      --kr-cta-bg: #28231C;
+      --kr-cta-text: #F7EFE2;
+      --kr-dark: #1F1B15;
+      --kr-dark-text: #F7EFE2;
+
+      --kr-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --kr-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+
+      --kr-max-width: 760px;
+      --kr-max-width-wide: 920px;
+      --kr-radius-sm: 4px;
+      --kr-radius-md: 10px;
+      --kr-radius-lg: 18px;
+      --kr-radius-xl: 28px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--kr-base);
+      color: var(--kr-text);
+      font-family: var(--kr-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .kr-wrap {
+      max-width: var(--kr-max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .kr-wrap-wide {
+      max-width: var(--kr-max-width-wide);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Sticky nav ===== */
+    .kr-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 239, 226, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 0.5px solid var(--kr-divider);
+    }
+    .kr-nav-inner {
+      max-width: var(--kr-max-width-wide);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .kr-logo {
+      font-family: var(--kr-sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 1.6px;
+      color: var(--kr-text);
+      text-decoration: none;
+    }
+    .kr-nav-cta {
+      font-family: var(--kr-sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--kr-text);
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 0.5px solid var(--kr-text);
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .kr-nav-cta:hover {
+      background: var(--kr-text);
+      color: var(--kr-base);
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 72px 0; }
+    .kr-section-tight { padding: 32px 0 8px; }
+
+    .kr-eyebrow {
+      font-family: var(--kr-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--kr-accent);
+      margin: 0 0 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kr-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--kr-surface);
+      border: 0.5px solid var(--kr-border);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-family: var(--kr-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--kr-accent);
+      margin: 0 0 22px;
+    }
+
+    /* ===== Hero ===== */
+    .kr-hero { padding: 64px 0 32px; }
+    .kr-hero h1 {
+      font-family: var(--kr-serif);
+      font-size: clamp(40px, 7.5vw, 64px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin: 0 0 14px;
+      color: var(--kr-text);
+    }
+    .kr-hero h1 .accent {
+      color: var(--kr-accent);
+      font-style: italic;
+      font-weight: 300;
+      display: block;
+    }
+    .kr-hero-sub {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--kr-text-soft);
+      max-width: 580px;
+      margin: 0 0 36px;
+    }
+
+    /* ===== Buttons ===== */
+    .kr-btn {
+      display: inline-block;
+      background: var(--kr-cta-bg);
+      color: var(--kr-cta-text);
+      font-family: var(--kr-sans);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      text-decoration: none;
+      padding: 16px 30px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.2s ease;
+    }
+    .kr-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+    .kr-btn-ghost {
+      display: inline-block;
+      background: transparent;
+      color: var(--kr-text);
+      font-family: var(--kr-sans);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 14px 0;
+      margin-left: 18px;
+      border-bottom: 1px solid var(--kr-text);
+    }
+
+    /* ===== Data cards ===== */
+    .kr-data-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+    @media (max-width: 600px) {
+      .kr-data-grid { grid-template-columns: 1fr; }
+    }
+    .kr-data-card {
+      background: var(--kr-surface);
+      border: 0.5px solid var(--kr-border);
+      border-radius: var(--kr-radius-lg);
+      padding: 26px 22px;
+    }
+    .kr-data-card.peach { background: var(--kr-peach); border-color: transparent; }
+    .kr-data-card.sage { background: var(--kr-sage); border-color: transparent; }
+    .kr-data-value {
+      font-family: var(--kr-serif);
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--kr-text);
+      letter-spacing: -0.03em;
+    }
+    .kr-data-value .unit {
+      font-size: 22px;
+      color: var(--kr-text-soft);
+      font-weight: 400;
+    }
+    .kr-data-label {
+      font-family: var(--kr-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--kr-text-soft);
+      margin-top: 14px;
+    }
+
+    /* ===== Section heading ===== */
+    .kr-section-h {
+      font-family: var(--kr-serif);
+      font-size: clamp(32px, 4.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+      color: var(--kr-text);
+    }
+    .kr-section-h .accent {
+      color: var(--kr-accent);
+      font-style: italic;
+      font-weight: 300;
+    }
+    .kr-section-lead {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--kr-text-soft);
+      max-width: 600px;
+      margin: 0 0 32px;
+    }
+
+    /* ===== Audience list ===== */
+    .kr-audience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    @media (max-width: 600px) {
+      .kr-audience { grid-template-columns: 1fr; }
+    }
+    .kr-audience li {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--kr-text);
+      padding: 18px 0;
+      border-top: 0.5px solid var(--kr-divider);
+      display: flex;
+      gap: 12px;
+    }
+    .kr-audience li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--kr-accent);
+      margin-top: 9px;
+    }
+
+    /* ===== Numbered step blocks ===== */
+    .kr-steps-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .kr-step-block {
+      background: var(--kr-surface);
+      border: 0.5px solid var(--kr-border);
+      border-radius: var(--kr-radius-xl);
+      padding: 38px 36px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .kr-step-block.peach { background: var(--kr-peach); border-color: transparent; }
+    .kr-step-block.sage { background: var(--kr-sage); border-color: transparent; }
+    @media (max-width: 600px) {
+      .kr-step-block {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 30px 26px;
+      }
+    }
+    .kr-step-label {
+      font-family: var(--kr-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--kr-accent);
+      margin: 0 0 4px;
+    }
+    .kr-step-numeral {
+      font-family: var(--kr-serif);
+      font-size: clamp(56px, 9vw, 88px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--kr-accent);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      min-width: 100px;
+    }
+    .kr-step-block h3 {
+      font-family: var(--kr-serif);
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      color: var(--kr-text);
+      letter-spacing: -0.01em;
+    }
+    .kr-step-block p {
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: var(--kr-text-soft);
+      margin: 0;
+    }
+
+    /* ===== Testimonial ===== */
+    .kr-testimonial { padding: 8px 0; }
+    .kr-quote-card {
+      background: var(--kr-sage);
+      border-radius: var(--kr-radius-xl);
+      padding: 48px 44px;
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      .kr-quote-card { padding: 36px 28px; }
+    }
+    .kr-quote {
+      font-family: var(--kr-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.3;
+      color: var(--kr-text);
+      margin: 0 0 22px;
+      letter-spacing: -0.01em;
+    }
+    .kr-quote-attr {
+      font-family: var(--kr-sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--kr-accent);
+      margin: 0;
+    }
+
+    /* ===== Dark contrast section ===== */
+    .kr-dark-section {
+      background: var(--kr-dark);
+      color: var(--kr-dark-text);
+      padding: 80px 0;
+    }
+    .kr-dark-section .kr-eyebrow { color: var(--kr-peach); }
+    .kr-dark-section .kr-section-h { color: var(--kr-dark-text); }
+    .kr-dark-section .kr-section-h .accent { color: var(--kr-peach); }
+    .kr-dark-section .kr-section-lead {
+      color: rgba(247, 239, 226, 0.78);
+      max-width: 640px;
+    }
+
+    /* ===== Final CTA card ===== */
+    .kr-final-cta {
+      background: var(--kr-peach);
+      border-radius: var(--kr-radius-xl);
+      padding: 60px 36px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .kr-final-cta { padding: 48px 24px; }
+    }
+    .kr-final-cta .kr-eyebrow { color: var(--kr-accent-deep); }
+    .kr-final-cta .kr-section-h { margin-bottom: 14px; }
+    .kr-final-cta .kr-section-lead {
+      margin: 0 auto 28px;
+      color: var(--kr-text);
+    }
+
+    .kr-form {
+      margin-top: 24px;
+    }
+    .kr-form-label {
+      font-family: var(--kr-sans);
+      font-size: 14px;
+      color: var(--kr-text);
+      margin: 0 0 18px;
+      line-height: 1.5;
+    }
+    .kr-form-label em {
+      font-family: var(--kr-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--kr-accent-deep);
+    }
+    .kr-form-row {
+      display: flex;
+      gap: 8px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    @media (max-width: 480px) {
+      .kr-form-row { flex-direction: column; }
+    }
+    .kr-form input[type="email"] {
+      flex: 1;
+      font-family: var(--kr-sans);
+      font-size: 15px;
+      padding: 14px 18px;
+      border: 0.5px solid var(--kr-border);
+      background: var(--kr-base);
+      border-radius: 999px;
+      color: var(--kr-text);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .kr-form input[type="email"]:focus { border-color: var(--kr-accent); }
+    .kr-form button {
+      display: inline-block;
+      font-family: var(--kr-sans);
+      background: var(--kr-cta-bg);
+      color: var(--kr-cta-text);
+      border: none;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .kr-cta-secondary {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 0.5px solid rgba(176, 129, 93, 0.35);
+      font-size: 14px;
+      color: var(--kr-text);
+    }
+    .kr-cta-secondary a {
+      color: var(--kr-accent-deep);
+      text-decoration: none;
+      border-bottom: 1px solid var(--kr-accent-deep);
+      padding-bottom: 1px;
+    }
+
+    /* ===== Footer ===== */
+    .kr-footer {
+      padding: 60px 0 72px;
+      border-top: 0.5px solid var(--kr-divider);
+      text-align: center;
+    }
+    .kr-footer-name {
+      font-family: var(--kr-serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--kr-text);
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .kr-footer-tag {
+      font-size: 13px;
+      color: var(--kr-text-soft);
+      letter-spacing: 0.3px;
+      margin: 0 0 28px;
+      font-style: italic;
+      font-family: var(--kr-serif);
+      font-weight: 400;
+    }
+    .kr-social {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 0 28px;
+    }
+    .kr-social a {
+      font-family: var(--kr-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--kr-text-soft);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--kr-divider);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .kr-social a:hover { color: var(--kr-accent); border-color: var(--kr-accent); }
+    .kr-legal {
+      font-size: 11px;
+      color: var(--kr-text-soft);
+      opacity: 0.75;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="kr-nav">
+    <div class="kr-nav-inner">
+      <a href="/" class="kr-logo">KRISTA RECKER</a>
+      <a href="#get" class="kr-nav-cta">Get the sheet</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="kr-hero">
+    <div class="kr-wrap">
+      <p class="kr-eyebrow-pill">🏡 The Decision Sheet</p>
+      <h1>
+        Cash offer at the kitchen table?
+        <span class="accent">Run both columns first.</span>
+      </h1>
+      <p class="kr-hero-sub">
+        A free side by side math sheet for inherited and as-is sellers on the South Shore. Compare the cash offer against the as-is on market sale, with real Massachusetts closing numbers and the Quincy worked example that walked away with $37,000 more.
+      </p>
+      <a href="#get" class="kr-btn">Get the Decision Sheet</a>
+      <a href="#how" class="kr-btn-ghost">How it works</a>
+    </div>
+  </header>
+
+  <!-- DATA CARDS -->
+  <section class="kr-section-tight">
+    <div class="kr-wrap">
+      <div class="kr-data-grid">
+        <div class="kr-data-card peach">
+          <div class="kr-data-value">2</div>
+          <div class="kr-data-label">Paths compared side by side</div>
+        </div>
+        <div class="kr-data-card">
+          <div class="kr-data-value">$37<span class="unit">K</span></div>
+          <div class="kr-data-label">Net delta in the Quincy example</div>
+        </div>
+        <div class="kr-data-card sage">
+          <div class="kr-data-value">6</div>
+          <div class="kr-data-label">Questions before you sign</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section>
+    <div class="kr-wrap">
+      <p class="kr-eyebrow">✨ Who this is for</p>
+      <h2 class="kr-section-h">
+        Built for sellers handling
+        <span class="accent">an inherited or as-is property</span>
+        on the South Shore.
+      </h2>
+      <p class="kr-section-lead">
+        Most families only ever see one path before they sign. This sheet shows the other one, with real numbers, so the decision belongs to you.
+      </p>
+      <ul class="kr-audience">
+        <li>You inherited a home and a cash investor showed up at the kitchen table.</li>
+        <li>You are managing an estate and want to compare paths before any decision is final.</li>
+        <li>The house needs work and someone told you to take the cash offer.</li>
+        <li>You are an executor and want a defensible reason for the path you chose.</li>
+        <li>You want to see what the as-is on market net actually looks like.</li>
+        <li>You want the math before the conversation, not after.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="kr-wrap">
+      <p class="kr-eyebrow">📊 How it works</p>
+      <h2 class="kr-section-h">
+        Three steps,
+        <span class="accent">with the math attached.</span>
+      </h2>
+      <p class="kr-section-lead">
+        The Decision Sheet is a six page guide. Download it, run your numbers, decide on your timeline. The framework does the heavy lifting.
+      </p>
+
+      <div class="kr-steps-stack">
+        <div class="kr-step-block">
+          <div class="kr-step-numeral">01</div>
+          <div>
+            <p class="kr-step-label">Step 01</p>
+            <h3>Get the sheet.</h3>
+            <p>Drop your email below and the PDF arrives in your inbox. If you would rather skip the form, DM the keyword GOLDMINE on Instagram and it gets sent over the same way.</p>
+          </div>
+        </div>
+        <div class="kr-step-block peach">
+          <div class="kr-step-numeral">02</div>
+          <div>
+            <p class="kr-step-label">Step 02</p>
+            <h3>Run both columns on your property.</h3>
+            <p>The sheet walks you through the cash investor path and the as-is on market path, side by side, with real Massachusetts closing math. The Quincy worked example shows what a $37,000 delta actually looks like on a line item net sheet.</p>
+          </div>
+        </div>
+        <div class="kr-step-block sage">
+          <div class="kr-step-numeral">03</div>
+          <div>
+            <p class="kr-step-label">Step 03</p>
+            <h3>Decide on your timeline.</h3>
+            <p>Six questions to ask before you sign anything, plus a clear read on when each path is the better fit for your estate. Bring questions to a 30 minute strategy call, or move forward on your own with the framework you have.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK SECTION · WHY THIS APPROACH -->
+  <section class="kr-dark-section">
+    <div class="kr-wrap">
+      <p class="kr-eyebrow">🧠 Why this approach</p>
+      <h2 class="kr-section-h">
+        Cash offers are built from a formula.
+        <span class="accent">Your sale should be too.</span>
+      </h2>
+      <p class="kr-section-lead">
+        Most cash investors price a property by subtracting their rehab budget, their carrying costs, and their profit margin from what they think it could sell for. The math is real. The problem is, it belongs to them, not to you. The Decision Sheet runs the same math from your side of the table, so the offer is no longer the only number in the conversation. Sometimes the cash offer is the right call. Sometimes the as-is on market path nets meaningfully more. The framework tells you which.
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section>
+    <div class="kr-wrap">
+      <div class="kr-quote-card">
+        <p class="kr-quote">
+          "Krista showed us both columns at the kitchen table. We had the cash offer in writing and the on market math next to it. The numbers told us what to do."
+        </p>
+        <p class="kr-quote-attr">[Client Name] · [City, State]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="get">
+    <div class="kr-wrap">
+      <div class="kr-final-cta">
+        <p class="kr-eyebrow">☕ Ready when you are</p>
+        <h2 class="kr-section-h">Get the Decision Sheet.</h2>
+        <p class="kr-section-lead">
+          Six pages of side by side math. The Quincy worked example. Six questions to ask before you sign anything. Free.
+        </p>
+
+        <div class="kr-form">
+          <p class="kr-form-label">
+            Email me a copy of the guide:
+            <em>As-Is On-Market vs Cash Investor, the Decision Sheet.</em>
+          </p>
+          <form action="[FORMSPREE_ENDPOINT]" method="POST" class="kr-form-row">
+            <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+            <button type="submit">Send me the sheet</button>
+          </form>
+        </div>
+
+        <p class="kr-cta-secondary">
+          Want to walk it through together? <a href="https://calendly.com/kristarecker/free-30-minute-strategy-call" target="_blank" rel="noopener">Book a free 30 minute strategy call</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="kr-footer">
+    <div class="kr-wrap">
+      <p class="kr-footer-name">Krista Recker Properties</p>
+      <p class="kr-footer-tag">Strategy first. Decisions backed by data.</p>
+      <div class="kr-social">
+        <a href="https://instagram.com/kristareckerproperties" target="_blank" rel="noopener">Instagram</a>
+        <a href="[LINKEDIN_URL]" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="[FACEBOOK_URL]" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:krista@moorrealty.com">Email</a>
+      </div>
+      <p class="kr-legal">© 2026 Krista Recker Properties.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
