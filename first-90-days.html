@@ -1,735 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The First 90 Days | Krista Recker Properties</title>
-  <meta name="description" content="A free field guide for families navigating an inherited property after a life transition. The pause, the facts, and the path, in order, before any decision is final.">
-
-  <!-- Open Graph (controls how the page previews when shared on social or in DMs) -->
-  <meta property="og:title" content="The First 90 Days | Krista Recker Properties">
-  <meta property="og:description" content="A field guide for families navigating an inherited property after a life transition. The pause, the facts, and the path, in order.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="[OG_IMAGE_URL]">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    /* ============================================================
-       KRISTA RECKER PROPERTIES — LANDING PAGE DESIGN SYSTEM v2
-       Same brand system as seller-strategy-session.html and decision-sheet.html.
-       Only the body copy changes per page.
-       ============================================================ */
-
-    :root {
-      --kr-base: #F7EFE2;
-      --kr-surface: #FBF5EA;
-      --kr-peach: #F2DDC2;
-      --kr-sage: #E3E9D0;
-      --kr-accent: #B0815D;
-      --kr-accent-deep: #8A5E3D;
-      --kr-text: #1F1B15;
-      --kr-text-soft: #6B5A4A;
-      --kr-divider: #D9C9AC;
-      --kr-border: #E6D9C2;
-      --kr-cta-bg: #28231C;
-      --kr-cta-text: #F7EFE2;
-      --kr-dark: #1F1B15;
-      --kr-dark-text: #F7EFE2;
-
-      --kr-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
-      --kr-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-
-      --kr-max-width: 760px;
-      --kr-max-width-wide: 920px;
-      --kr-radius-sm: 4px;
-      --kr-radius-md: 10px;
-      --kr-radius-lg: 18px;
-      --kr-radius-xl: 28px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--kr-base);
-      color: var(--kr-text);
-      font-family: var(--kr-sans);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .kr-wrap {
-      max-width: var(--kr-max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .kr-wrap-wide {
-      max-width: var(--kr-max-width-wide);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ===== Sticky nav ===== */
-    .kr-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(247, 239, 226, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 0.5px solid var(--kr-divider);
-    }
-    .kr-nav-inner {
-      max-width: var(--kr-max-width-wide);
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .kr-logo {
-      font-family: var(--kr-sans);
-      font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 1.6px;
-      color: var(--kr-text);
-      text-decoration: none;
-    }
-    .kr-nav-cta {
-      font-family: var(--kr-sans);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--kr-text);
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 0.5px solid var(--kr-text);
-      border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .kr-nav-cta:hover {
-      background: var(--kr-text);
-      color: var(--kr-base);
-    }
-
-    /* ===== Sections ===== */
-    section { padding: 72px 0; }
-    .kr-section-tight { padding: 32px 0 8px; }
-
-    .kr-eyebrow {
-      font-family: var(--kr-sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      color: var(--kr-accent);
-      margin: 0 0 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .kr-eyebrow-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--kr-surface);
-      border: 0.5px solid var(--kr-border);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-family: var(--kr-sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: var(--kr-accent);
-      margin: 0 0 22px;
-    }
-
-    /* ===== Hero ===== */
-    .kr-hero { padding: 64px 0 32px; }
-    .kr-hero h1 {
-      font-family: var(--kr-serif);
-      font-size: clamp(40px, 7.5vw, 64px);
-      font-weight: 400;
-      line-height: 1.02;
-      letter-spacing: -0.025em;
-      margin: 0 0 14px;
-      color: var(--kr-text);
-    }
-    .kr-hero h1 .accent {
-      color: var(--kr-accent);
-      font-style: italic;
-      font-weight: 300;
-      display: block;
-    }
-    .kr-hero-sub {
-      font-size: 18px;
-      line-height: 1.65;
-      color: var(--kr-text-soft);
-      max-width: 580px;
-      margin: 0 0 36px;
-    }
-
-    /* ===== Buttons ===== */
-    .kr-btn {
-      display: inline-block;
-      background: var(--kr-cta-bg);
-      color: var(--kr-cta-text);
-      font-family: var(--kr-sans);
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      text-decoration: none;
-      padding: 16px 30px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.15s ease, opacity 0.2s ease;
-    }
-    .kr-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-    }
-    .kr-btn-ghost {
-      display: inline-block;
-      background: transparent;
-      color: var(--kr-text);
-      font-family: var(--kr-sans);
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      padding: 14px 0;
-      margin-left: 18px;
-      border-bottom: 1px solid var(--kr-text);
-    }
-
-    /* ===== Data cards ===== */
-    .kr-data-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 8px;
-    }
-    @media (max-width: 600px) {
-      .kr-data-grid { grid-template-columns: 1fr; }
-    }
-    .kr-data-card {
-      background: var(--kr-surface);
-      border: 0.5px solid var(--kr-border);
-      border-radius: var(--kr-radius-lg);
-      padding: 26px 22px;
-    }
-    .kr-data-card.peach { background: var(--kr-peach); border-color: transparent; }
-    .kr-data-card.sage { background: var(--kr-sage); border-color: transparent; }
-    .kr-data-value {
-      font-family: var(--kr-serif);
-      font-size: 44px;
-      font-weight: 400;
-      line-height: 1;
-      color: var(--kr-text);
-      letter-spacing: -0.03em;
-    }
-    .kr-data-value .unit {
-      font-size: 22px;
-      color: var(--kr-text-soft);
-      font-weight: 400;
-    }
-    .kr-data-label {
-      font-family: var(--kr-sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: var(--kr-text-soft);
-      margin-top: 14px;
-    }
-
-    /* ===== Section heading ===== */
-    .kr-section-h {
-      font-family: var(--kr-serif);
-      font-size: clamp(32px, 4.5vw, 44px);
-      font-weight: 400;
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      margin: 0 0 16px;
-      color: var(--kr-text);
-    }
-    .kr-section-h .accent {
-      color: var(--kr-accent);
-      font-style: italic;
-      font-weight: 300;
-    }
-    .kr-section-lead {
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--kr-text-soft);
-      max-width: 600px;
-      margin: 0 0 32px;
-    }
-
-    /* ===== Audience list ===== */
-    .kr-audience {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 28px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    @media (max-width: 600px) {
-      .kr-audience { grid-template-columns: 1fr; }
-    }
-    .kr-audience li {
-      font-size: 15px;
-      line-height: 1.55;
-      color: var(--kr-text);
-      padding: 18px 0;
-      border-top: 0.5px solid var(--kr-divider);
-      display: flex;
-      gap: 12px;
-    }
-    .kr-audience li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--kr-accent);
-      margin-top: 9px;
-    }
-
-    /* ===== Numbered step blocks ===== */
-    .kr-steps-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin-top: 8px;
-    }
-    .kr-step-block {
-      background: var(--kr-surface);
-      border: 0.5px solid var(--kr-border);
-      border-radius: var(--kr-radius-xl);
-      padding: 38px 36px;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-    .kr-step-block.peach { background: var(--kr-peach); border-color: transparent; }
-    .kr-step-block.sage { background: var(--kr-sage); border-color: transparent; }
-    @media (max-width: 600px) {
-      .kr-step-block {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 30px 26px;
-      }
-    }
-    .kr-step-label {
-      font-family: var(--kr-sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      color: var(--kr-accent);
-      margin: 0 0 4px;
-    }
-    .kr-step-numeral {
-      font-family: var(--kr-serif);
-      font-size: clamp(56px, 9vw, 88px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--kr-accent);
-      line-height: 0.9;
-      letter-spacing: -0.04em;
-      min-width: 100px;
-    }
-    .kr-step-block h3 {
-      font-family: var(--kr-serif);
-      font-size: clamp(22px, 3vw, 28px);
-      font-weight: 400;
-      line-height: 1.2;
-      margin: 0 0 12px;
-      color: var(--kr-text);
-      letter-spacing: -0.01em;
-    }
-    .kr-step-block p {
-      font-size: 15.5px;
-      line-height: 1.65;
-      color: var(--kr-text-soft);
-      margin: 0;
-    }
-
-    /* ===== Testimonial ===== */
-    .kr-testimonial { padding: 8px 0; }
-    .kr-quote-card {
-      background: var(--kr-sage);
-      border-radius: var(--kr-radius-xl);
-      padding: 48px 44px;
-      text-align: left;
-    }
-    @media (max-width: 600px) {
-      .kr-quote-card { padding: 36px 28px; }
-    }
-    .kr-quote {
-      font-family: var(--kr-serif);
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(22px, 3vw, 30px);
-      line-height: 1.3;
-      color: var(--kr-text);
-      margin: 0 0 22px;
-      letter-spacing: -0.01em;
-    }
-    .kr-quote-attr {
-      font-family: var(--kr-sans);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      color: var(--kr-accent);
-      margin: 0;
-    }
-
-    /* ===== Dark contrast section ===== */
-    .kr-dark-section {
-      background: var(--kr-dark);
-      color: var(--kr-dark-text);
-      padding: 80px 0;
-    }
-    .kr-dark-section .kr-eyebrow { color: var(--kr-peach); }
-    .kr-dark-section .kr-section-h { color: var(--kr-dark-text); }
-    .kr-dark-section .kr-section-h .accent { color: var(--kr-peach); }
-    .kr-dark-section .kr-section-lead {
-      color: rgba(247, 239, 226, 0.78);
-      max-width: 640px;
-    }
-
-    /* ===== Final CTA card ===== */
-    .kr-final-cta {
-      background: var(--kr-peach);
-      border-radius: var(--kr-radius-xl);
-      padding: 60px 36px;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      .kr-final-cta { padding: 48px 24px; }
-    }
-    .kr-final-cta .kr-eyebrow { color: var(--kr-accent-deep); }
-    .kr-final-cta .kr-section-h { margin-bottom: 14px; }
-    .kr-final-cta .kr-section-lead {
-      margin: 0 auto 28px;
-      color: var(--kr-text);
-    }
-
-    .kr-form {
-      margin-top: 24px;
-    }
-    .kr-form-label {
-      font-family: var(--kr-sans);
-      font-size: 14px;
-      color: var(--kr-text);
-      margin: 0 0 18px;
-      line-height: 1.5;
-    }
-    .kr-form-label em {
-      font-family: var(--kr-serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--kr-accent-deep);
-    }
-    .kr-form-row {
-      display: flex;
-      gap: 8px;
-      max-width: 460px;
-      margin: 0 auto;
-    }
-    @media (max-width: 480px) {
-      .kr-form-row { flex-direction: column; }
-    }
-    .kr-form input[type="email"] {
-      flex: 1;
-      font-family: var(--kr-sans);
-      font-size: 15px;
-      padding: 14px 18px;
-      border: 0.5px solid var(--kr-border);
-      background: var(--kr-base);
-      border-radius: 999px;
-      color: var(--kr-text);
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-    .kr-form input[type="email"]:focus { border-color: var(--kr-accent); }
-    .kr-form button {
-      display: inline-block;
-      font-family: var(--kr-sans);
-      background: var(--kr-cta-bg);
-      color: var(--kr-cta-text);
-      border: none;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    .kr-cta-secondary {
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 0.5px solid rgba(176, 129, 93, 0.35);
-      font-size: 14px;
-      color: var(--kr-text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-    .kr-cta-secondary p {
-      margin: 0;
-      color: var(--kr-text);
-      font-size: 14px;
-    }
-    .kr-btn-outline {
-      display: inline-block;
-      background: transparent;
-      color: var(--kr-cta-bg);
-      font-family: var(--kr-sans);
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      text-decoration: none;
-      padding: 13px 26px;
-      border: 1px solid var(--kr-cta-bg);
-      border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .kr-btn-outline:hover {
-      background: var(--kr-cta-bg);
-      color: var(--kr-cta-text);
-    }
-
-    /* ===== Footer ===== */
-    .kr-footer {
-      padding: 60px 0 72px;
-      border-top: 0.5px solid var(--kr-divider);
-      text-align: center;
-    }
-    .kr-footer-name {
-      font-family: var(--kr-serif);
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--kr-text);
-      margin: 0 0 8px;
-      letter-spacing: -0.01em;
-    }
-    .kr-footer-tag {
-      font-size: 13px;
-      color: var(--kr-text-soft);
-      letter-spacing: 0.3px;
-      margin: 0 0 28px;
-      font-style: italic;
-      font-family: var(--kr-serif);
-      font-weight: 400;
-    }
-    .kr-social {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 0 28px;
-    }
-    .kr-social a {
-      font-family: var(--kr-sans);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      color: var(--kr-text-soft);
-      text-decoration: none;
-      border-bottom: 0.5px solid var(--kr-divider);
-      padding-bottom: 2px;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-    .kr-social a:hover { color: var(--kr-accent); border-color: var(--kr-accent); }
-    .kr-legal {
-      font-size: 11px;
-      color: var(--kr-text-soft);
-      opacity: 0.75;
-      margin: 0;
-    }
-    .kr-disclaimer {
-      font-size: 9px;
-      color: var(--kr-text-soft);
-      opacity: 0.55;
-      margin: 10px 0 0;
-      letter-spacing: 0.2px;
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First 90 Days | Krista Recker Properties</title>
+<meta name="description" content="A free field guide for families navigating an inherited property after a life transition. The pause, the facts, and the path, in order, before any decision is final.">
+<meta property="og:title" content="The First 90 Days | Krista Recker Properties">
+<meta property="og:description" content="A field guide for families navigating an inherited property after a life transition. The pause, the facts, and the path, in order.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7EFE2; --card:#FBF5EA; --sand:#F2DDC2; --sage:#E3E9D0;
+    --camel:#B0815D; --brown:#8A5E3D; --espresso:#1F1B15; --dark:#28231C;
+    --muted:#6B5A4A; --line:#E6D9C2;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',-apple-system,system-ui,'Helvetica Neue',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .center{max-width:760px;margin:0 auto;text-align:center}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--espresso);letter-spacing:-.01em}
+  .accent{font-style:italic;color:var(--brown)}
+  .kicker{font-family:var(--sans);font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+          font-size:12.5px;color:var(--camel)}
+  p{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:var(--sans);
+       font-weight:600;border-radius:999px;padding:15px 30px;font-size:15px;transition:transform .05s ease,opacity .2s ease,background .2s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-dark{background:var(--dark);color:var(--cream)}
+  .btn-dark:hover{opacity:.9}
+  .btn-outline{background:transparent;color:var(--espresso);border:1.5px solid var(--espresso)}
+  .btn-outline:hover{background:var(--espresso);color:var(--cream)}
+  .btn-sm{padding:11px 22px;font-size:14px}
+  .txtlink{font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;color:var(--espresso);
+           border-bottom:2px solid var(--camel);padding-bottom:3px}
+  .badge{display:inline-block;font-family:var(--sans);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+         font-size:12px;color:var(--camel);border:1px solid var(--line);background:var(--card);
+         padding:8px 16px;border-radius:999px}
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(247,239,226,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:var(--sans);font-weight:600;letter-spacing:.14em;font-size:14px;color:var(--espresso);text-decoration:none}
+  /* hero */
+  header.hero{padding:70px 0 40px;text-align:center}
+  .hero h1{font-size:clamp(40px,6.4vw,68px);line-height:1.04;margin:26px 0 22px}
+  .hero p.sub{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:600px;margin:0 auto}
+  .hero .cta-row{margin-top:36px;display:flex;gap:22px;justify-content:center;align-items:center;flex-wrap:wrap}
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:56px auto 0;max-width:1000px}
+  .stat{border-radius:18px;padding:30px 26px;min-height:150px}
+  .stat.s1{background:var(--sand)} .stat.s2{background:var(--card)} .stat.s3{background:var(--sage)}
+  .stat .n{font-family:var(--serif);font-size:58px;line-height:1;color:var(--espresso)}
+  .stat .l{font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:var(--muted);margin-top:16px}
+  /* sections */
+  section{padding:70px 0}
+  h2{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:14px 0 20px}
+  p.lead{font-size:18px;color:var(--muted);max-width:680px}
+  .who ul{list-style:none;margin:34px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 56px;max-width:960px}
+  .who li{position:relative;padding:20px 0 20px 26px;border-top:1px solid var(--line);color:var(--espresso);font-size:15.5px}
+  .who li::before{content:"";position:absolute;left:0;top:26px;width:8px;height:8px;border-radius:50%;background:var(--camel)}
+  /* phase cards */
+  .phases{display:flex;flex-direction:column;gap:26px;margin-top:40px}
+  .phase{border-radius:22px;padding:38px 42px;display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:start}
+  .phase.p1{background:var(--card)} .phase.p2{background:var(--sand)} .phase.p3{background:var(--sage)}
+  .phase .idx{font-family:var(--serif);font-style:italic;font-size:76px;line-height:.8;color:var(--camel)}
+  .phase .wk{font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;color:var(--brown)}
+  .phase h3{font-size:26px;margin:6px 0 12px}
+  .phase p{color:var(--muted);font-size:15.5px;max-width:640px}
+  /* why (dark band) */
+  .why{background:var(--espresso);color:var(--cream);border-radius:0}
+  .why h2{color:var(--cream)}
+  .why .kicker{color:var(--camel)}
+  .why p{color:#D8CBB6;font-size:19px;max-width:760px}
+  /* final cta */
+  .getwrap{padding:70px 0}
+  .get{background:var(--sand);border-radius:26px;padding:64px 40px;text-align:center}
+  .get h2{margin:12px 0 18px}
+  .get p{color:var(--muted);max-width:600px;margin:0 auto 30px;font-size:18px}
+  .get .cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center}
+  .get .rule{height:1px;background:rgba(31,27,21,.14);max-width:420px;margin:34px auto 18px}
+  .get .note{font-size:14.5px;color:var(--muted)}
+  /* footer */
+  footer{background:var(--dark);color:#B9AC98;padding:52px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer strong{font-family:var(--serif);font-weight:500;color:var(--cream);font-size:19px}
+  footer a{color:#D8CBB6;text-decoration:none;margin-left:18px}
+  footer a:hover{color:#fff}
+  .disc{font-size:12.5px;color:#8B7E6C;margin-top:16px;max-width:620px}
+  @media(max-width:760px){
+    .stats{grid-template-columns:1fr}
+    .who ul{grid-template-columns:1fr}
+    .phase{grid-template-columns:1fr;gap:6px;padding:30px}
+    .phase .idx{font-size:56px}
+    footer .wrap{flex-direction:column}
+    footer a{margin-left:0;margin-right:18px}
+  }
+</style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="kr-nav">
-    <div class="kr-nav-inner">
-      <a href="/" class="kr-logo">KRISTA RECKER</a>
-      <a href="#get" class="kr-nav-cta">Get the guide</a>
-    </div>
-  </nav>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="https://kristarecker.vercel.app/">KRISTA RECKER</a>
+    <a class="btn btn-outline btn-sm" href="the-first-90-days.pdf" download>Get the guide</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <header class="kr-hero">
-    <div class="kr-wrap">
-      <p class="kr-eyebrow-pill">🏡 The First 90 Days</p>
-      <h1>
-        A property in the family,
-        <span class="accent">and the 90 days that decide the rest.</span>
-      </h1>
-      <p class="kr-hero-sub">
-        A free field guide for families navigating an inherited property after a life transition. The pause, the facts, and the path, in order, so the decisions you make in the first three months hold up later.
-      </p>
-      <a href="#get" class="kr-btn">Get the Field Guide</a>
-      <a href="#how" class="kr-btn-ghost">How it works</a>
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">&#127969; The First 90 Days</span>
+    <h1>A property in the family,<br><span class="accent">and the 90 days that decide the rest.</span></h1>
+    <p class="sub">A free field guide for families navigating an inherited property after a life transition. The pause, the facts, and the path, in order, so the decisions you make in the first three months hold up later.</p>
+    <div class="cta-row">
+      <a class="btn btn-dark" href="the-first-90-days.pdf" download>Get the Field Guide</a>
+      <a class="txtlink" href="#how">How it works</a>
     </div>
-  </header>
+    <div class="stats">
+      <div class="stat s1"><div class="n">3</div><div class="l">Phases in the first 90 days</div></div>
+      <div class="stat s2"><div class="n">6</div><div class="l">Paths compared side by side</div></div>
+      <div class="stat s3"><div class="n">4</div><div class="l">Facts before any decision is final</div></div>
+    </div>
+  </div>
+</header>
 
-  <!-- DATA CARDS -->
-  <section class="kr-section-tight">
-    <div class="kr-wrap">
-      <div class="kr-data-grid">
-        <div class="kr-data-card peach">
-          <div class="kr-data-value">3</div>
-          <div class="kr-data-label">Phases in the first 90 days</div>
+<section class="who">
+  <div class="wrap">
+    <div class="kicker">&#10024; Who this is for</div>
+    <h2>Built for families handling an inherited property<br>in the middle of a life transition.</h2>
+    <p class="lead">Most heirs only ever see one path before they make a decision about the property. This guide maps the others, in order, so the choice belongs to the family.</p>
+    <ul>
+      <li>A parent or grandparent has passed and the property is now in your name or the family's.</li>
+      <li>A property is held in a trust and the trustee or beneficiaries are deciding what comes next.</li>
+      <li>A divorce or family transition has left a property that needs a real decision.</li>
+      <li>Wholesaler letters and unsolicited cash offers have started arriving in the mail.</li>
+      <li>You want to understand the tax position before anyone talks about price.</li>
+      <li>You want the math, the legal picture, and the family conversation in the right order.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="kicker">&#128202; How it works</div>
+    <h2>Three phases, <span class="accent">in the order that holds up.</span></h2>
+    <p class="lead">The guide is a short read. The structure is the same for any inherited property, in any market. The discipline is mostly about order.</p>
+    <div class="phases">
+      <div class="phase p1">
+        <div class="idx">01</div>
+        <div>
+          <div class="wk">Weeks 1 to 2</div>
+          <h3>The pause.</h3>
+          <p>Secure the building, gather the paperwork, notify the right people, and commit to nothing. The first two weeks are the most expensive ones to rush through. The guide walks exactly what to do, and what to wait on, before any conversation about price or path begins.</p>
         </div>
-        <div class="kr-data-card">
-          <div class="kr-data-value">5</div>
-          <div class="kr-data-label">Paths compared side by side</div>
+      </div>
+      <div class="phase p2">
+        <div class="idx">02</div>
+        <div>
+          <div class="wk">Weeks 3 to 6</div>
+          <h3>The facts.</h3>
+          <p>Four facts before any selling conversation begins. The legal status. The tax position, including the step-up in basis most heirs do not learn about until after they have already given it up. The family alignment. The honest read on the building. The guide shows you who to talk to, in what order, and what to walk away with.</p>
         </div>
-        <div class="kr-data-card sage">
-          <div class="kr-data-value">4</div>
-          <div class="kr-data-label">Facts before any decision is final</div>
+      </div>
+      <div class="phase p3">
+        <div class="idx">03</div>
+        <div>
+          <div class="wk">Weeks 7 to 12</div>
+          <h3>The path.</h3>
+          <p>Six paths worth comparing for any inherited property, with the trade-offs and the right-fit signal for each. Open market sale. Off-market private sale. Cash investor sale. Targeted improvements then list. Heir buyout. Short hold and rent. The path gets chosen on the evidence rather than on whoever pushed hardest.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHO THIS IS FOR -->
-  <section>
-    <div class="kr-wrap">
-      <p class="kr-eyebrow">✨ Who this is for</p>
-      <h2 class="kr-section-h">
-        Built for families handling
-        <span class="accent">an inherited property</span>
-        in the middle of a life transition.
-      </h2>
-      <p class="kr-section-lead">
-        Most heirs only ever see one path before they make a decision about the property. This guide maps the others, in order, so the choice belongs to the family.
-      </p>
-      <ul class="kr-audience">
-        <li>A parent or grandparent has passed and the property is now in your name or the family's.</li>
-        <li>A property is held in a trust and the trustee or beneficiaries are deciding what comes next.</li>
-        <li>A divorce or family transition has left a property that needs a real decision.</li>
-        <li>Wholesaler letters and unsolicited offers have started arriving in the mail.</li>
-        <li>You want to understand the tax position before anyone talks about price.</li>
-        <li>You want the math, the legal picture, and the family conversation in the right order.</li>
-      </ul>
-    </div>
-  </section>
+<section class="why">
+  <div class="wrap">
+    <div class="kicker">&#129504; Why this approach</div>
+    <h2>The first decisions are the ones<br>that end up costing the most.</h2>
+    <p>The most expensive mistakes I have seen on an inherited property happen in the first 60 days, before the family has the legal picture, the tax picture, or the honest read on what the building actually is. The wholesaler letters, the well-meaning advice, and the urgency to be done all push toward action before the information is in. The families who land in a good place use the first 90 days differently. They pause. They gather. Then they choose. The path they choose, whatever it is, is the one that fits the answers.</p>
+  </div>
+</section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how">
-    <div class="kr-wrap">
-      <p class="kr-eyebrow">📊 How it works</p>
-      <h2 class="kr-section-h">
-        Three phases,
-        <span class="accent">in the order that holds up.</span>
-      </h2>
-      <p class="kr-section-lead">
-        The Field Guide is a short read. The structure is the same for any inherited property, in any market. The discipline is mostly about order.
-      </p>
-
-      <div class="kr-steps-stack">
-        <div class="kr-step-block">
-          <div class="kr-step-numeral">01</div>
-          <div>
-            <p class="kr-step-label">Weeks 1 to 2</p>
-            <h3>The pause.</h3>
-            <p>Secure the building, gather the paperwork, notify the right people, and commit to nothing. The first two weeks are the most expensive ones to rush through. The guide walks through exactly what to do, and what to wait on, before any conversation about price or path begins.</p>
-          </div>
-        </div>
-        <div class="kr-step-block peach">
-          <div class="kr-step-numeral">02</div>
-          <div>
-            <p class="kr-step-label">Weeks 3 to 6</p>
-            <h3>The facts.</h3>
-            <p>Four facts before any selling conversation begins. The legal status. The tax position, including the step-up in basis most heirs do not learn about until after they have already given it up. The family alignment. The honest read on the building. The guide shows you who to talk to, in what order, and what to walk away with.</p>
-          </div>
-        </div>
-        <div class="kr-step-block sage">
-          <div class="kr-step-numeral">03</div>
-          <div>
-            <p class="kr-step-label">Weeks 7 to 12</p>
-            <h3>The path.</h3>
-            <p>Five paths worth comparing for any inherited property, with the trade-offs and the right-fit signal for each. Open market sale. Cash investor sale. Targeted improvements then list. Heir buyout. Short hold and rent. The path gets chosen on the evidence rather than on whoever pushed hardest.</p>
-          </div>
-        </div>
+<div class="getwrap" id="get">
+  <div class="wrap">
+    <div class="get">
+      <div class="kicker">&#9749; Ready when you are</div>
+      <h2>Get the Field Guide.</h2>
+      <p>The three phases. The four facts. The six paths. Plus a carrying-cost worksheet, a what-to-do-this-week checklist, and the questions to ask each pro. A short read for the moment a property lands in your family and you want to make the first decision the right one. Free, and yours to share.</p>
+      <div class="cta-row">
+        <a class="btn btn-dark" href="the-first-90-days.pdf" download>Download the Field Guide</a>
+        <a class="btn btn-outline" href="https://calendly.com/kristarecker/free-30-minute-strategy-call">Book a strategy call</a>
       </div>
+      <div class="rule"></div>
+      <div class="note">Prefer to talk it through? The call is 30 minutes, the real numbers, and a recommendation. No commitment to list.</div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- DARK SECTION · WHY THIS APPROACH -->
-  <section class="kr-dark-section">
-    <div class="kr-wrap">
-      <p class="kr-eyebrow">🧠 Why this approach</p>
-      <h2 class="kr-section-h">
-        The first decisions are the ones
-        <span class="accent">that end up costing the most.</span>
-      </h2>
-      <p class="kr-section-lead">
-        Most expensive mistakes I have seen on an inherited property happen in the first 60 days, before the family has the legal picture, the tax picture, or the honest read on what the building actually is. The wholesaler letters, the well-meaning advice, and the urgency to be done all push toward action before the information is in. The families who land in a good place use the first 90 days differently. They pause. They gather. Then they choose. The path they choose, whatever it is, is the one that fits the answers.
-      </p>
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>Krista Recker Properties</strong><br>
+      <span style="color:#B9AC98">Strategy first. Decisions backed by data.</span>
+      <div class="disc">Krista is a real estate professional and this is not legal advice. This guide is general education about how inherited property is usually handled in Massachusetts; please confirm the specifics with your own attorney and accountant. &copy; 2026 Krista Recker Properties.</div>
     </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section id="get">
-    <div class="kr-wrap">
-      <div class="kr-final-cta">
-        <p class="kr-eyebrow">☕ Ready when you are</p>
-        <h2 class="kr-section-h">Get the Field Guide.</h2>
-        <p class="kr-section-lead">
-          The three phases. The four facts. The five paths. A short read for the moment when a property has landed in your family and you want to make the first decision the right one. Free.
-        </p>
-
-        <a href="https://calendly.com/kristarecker/free-30-minute-strategy-call" class="kr-btn" target="_blank" rel="noopener">Book a strategy call</a>
-
-        <p class="kr-cta-secondary">
-          30 minutes, the real numbers, and a recommendation. No commitment to list.
-        </p>
-      </div>
+    <div style="align-self:center">
+      <a href="https://instagram.com/kristareckerproperties">Instagram</a>
+      <a href="https://www.linkedin.com/in/krista-recker/">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61563088414261">Facebook</a>
+      <a href="mailto:krista@moorrealty.com">Email</a>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="kr-footer">
-    <div class="kr-wrap">
-      <p class="kr-footer-name">Krista Recker Properties</p>
-      <p class="kr-footer-tag">Strategy first. Decisions backed by data.</p>
-      <div class="kr-social">
-        <a href="https://instagram.com/kristareckerproperties" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/in/krista-recker/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.facebook.com/profile.php?id=61563088414261" target="_blank" rel="noopener">Facebook</a>
-        <a href="mailto:krista@moorrealty.com">Email</a>
-      </div>
-      <p class="kr-legal">© 2026 Krista Recker Properties.</p>
-      <p class="kr-disclaimer">Krista is a real estate professional and this is not legal advice.</p>
-    </div>
-  </footer>
+  </div>
+</footer>
 
 </body>
 </html>
